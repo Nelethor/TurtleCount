@@ -13,11 +13,11 @@ TurtleCount:SetHeight(23)
 TurtleCount:SetBackdrop({
   bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
   edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-  tile = true, tileSize = 8, edgeSize = 16,
+  tile = true, tileSize = 8, edgeSize = 11,
   insets = { left = 3, right = 3, top = 3, bottom = 3 }
 })
-TurtleCount:SetBackdropBorderColor(.9,.8,.5,1)
-TurtleCount:SetBackdropColor(.4,.4,.4,1)
+TurtleCount:SetBackdropBorderColor(0.4, 0.4, 0.4, 1)  -- border color: dark gray, fully opaque
+TurtleCount:SetBackdropColor(0.1, 0.1, 0.1, 0.8)      -- backdrop color: very dark gray, mostly opaque
 
 TurtleCount:SetMovable(true)
 TurtleCount:SetClampedToScreen(true)
@@ -45,14 +45,14 @@ end
 
 TurtleCount.text = TurtleCount:CreateFontString("Status", "LOW", "GameFontNormal")
 TurtleCount.text:SetFont(STANDARD_TEXT_FONT, 12, "OUTLINE")
-TurtleCount.text:SetPoint("RIGHT", TurtleCount, "RIGHT", -5, 1)
+TurtleCount.text:SetPoint("RIGHT", TurtleCount, "RIGHT", -5, 0)
 TurtleCount.text:SetFontObject(GameFontWhite)
 TurtleCount.text:SetText("0")
 
 TurtleCount.icon = TurtleCount:CreateTexture(nil, 'ARTWORK')
 TurtleCount.icon:SetWidth(13)
 TurtleCount.icon:SetHeight(13)
-TurtleCount.icon:SetPoint("LEFT", TurtleCount, "LEFT", 5, 0)
+TurtleCount.icon:SetPoint("LEFT", TurtleCount, "LEFT", 3, 0)
 TurtleCount.icon:SetTexture("Interface\\Addons\\TurtleCount\\img\\turtle.tga")
 
 local refreshTime = GetTime() + 1
